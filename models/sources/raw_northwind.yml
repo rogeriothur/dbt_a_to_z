@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: raw_northwind
+    database: curso-dbt-az
+    schema: raw_northwind
+    description: "Essa é a fonte de dados da Northwind."
+    tables:
+      - name: orders
+        description: Tabela de vendas da Northwind
+        columns:
+          - name: order_id
+            tests:
+              - unique
+      - name: order_details
